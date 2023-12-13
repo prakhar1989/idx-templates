@@ -1,0 +1,8 @@
+{
+  "name": "Python FastAPI",
+  "description": "Start a simple API with the FastAPI framework for Python",
+  "categories": ["Backend"],
+  "icon": "https://www.gstatic.com/monospace/231115/logo_python.svg",
+  "publisher": "Prakhar Srivastav",
+  "params": []
+}
