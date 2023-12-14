@@ -13,3 +13,12 @@ or use Thunder client (via the sidebar or command pallete) to send a request to 
 # Dev
 
 The server auto-reloads - just refresh the preview after making any changes.
+
+
+# Deploy
+
+Login to gcloud CLI and run 
+
+```
+gcloud run deploy --source .
+```
