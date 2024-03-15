@@ -5,7 +5,7 @@
   bootstrap = ''
     dotnet new blazor -o .
     mkdir -p "$WS_NAME/.idx/"
-    cp -rf ${./dev.nix} "$WS_NAME/.idx/dev.nix"
-    cp -rf ${./icon.png} "$WS_NAME/.idx/icon.png"
+    cp -rf ${./.idx/dev.nix} "$WS_NAME/.idx/dev.nix"
+    cp -rf ${./.idx/icon.png} "$WS_NAME/.idx/icon.png"
   '';
 }
