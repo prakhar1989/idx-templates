@@ -6,6 +6,6 @@
     dotnet new blazor -o .
     mkdir -p "$WS_NAME/.idx/"
     cp -rf ${./.idx/dev.nix} "$WS_NAME/.idx/dev.nix"
-    cp -rf ${./.idx/icon.png} "$WS_NAME/.idx/icon.png"
+    cp -rf ${./.idx/logo.png} "$WS_NAME/.idx/icon.png"
   '';
 }
