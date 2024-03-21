@@ -1,11 +1,10 @@
-{ pkgs, apikey ? "missing-key", ... }: {
-  packages = [
-    pkgs.nodejs
-  ];
+{ pkgs, apikey ? "missingkey", ... }: {
+  packages = [];
   bootstrap = ''
     mkdir -p "$WS_NAME"
-    npm create -y vite@latest "$WS_NAME" -- --template "preact-ts"
     mkdir -p "$WS_NAME/.idx/"
+    cp -rf ${./dev.nix} "$WS_NAME/.idx/dev.nix"
+    echo ${apikey} > "$WS_NAME/apikey.txt"
     chmod -R +w "$WS_NAME"
     mv "$WS_NAME" "$out"
   '';

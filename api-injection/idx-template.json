@@ -9,7 +9,7 @@
       "id": "apikey",
       "name": "API KEY",
       "type": "text",
-      "default": "missingkey"
+      "default": "fill key here"
     }
   ]
 }
