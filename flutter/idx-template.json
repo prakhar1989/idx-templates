@@ -6,13 +6,5 @@
   "publisher": "Prakhar Srivastav",
   "host": {
      "virtualization": "true"
-  },
-  "params": [
-    {
-      "id": "apikey",
-      "name": "API KEY",
-      "type": "text",
-      "default": "fill key here"
-    }
-  ]
+  }
 }
