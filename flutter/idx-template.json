@@ -1,0 +1,18 @@
+{
+  "name": "API injection",
+  "description": "test template",
+  "categories": ["Backend"],
+  "icon": "https://www.gstatic.com/monospace/231115/logo_python.svg",
+  "publisher": "Prakhar Srivastav",
+  "host": {
+     "virtualization": "true"
+  },
+  "params": [
+    {
+      "id": "apikey",
+      "name": "API KEY",
+      "type": "text",
+      "default": "fill key here"
+    }
+  ]
+}
