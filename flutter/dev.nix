@@ -16,6 +16,9 @@
       # "vscodevim.vim"
     ];
     # Enable previews and customize configuration
+    workspace.onCreate = {
+        pub-get = "./.flutter-sdk/flutter/bin/flutter pub get";
+    };
     previews = {
       enable = true;
       previews = [
