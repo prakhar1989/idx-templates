@@ -1,0 +1,17 @@
+{
+    "name": "Bundle Unpacker",
+    "description": "oo",
+    "categories": [
+        "Web app"
+    ],
+    "publisher": "prakhar",
+    "params": [
+        {
+            "id": "files",
+            "name": "Files (JSON) to unpack",
+            "type": "string",
+            "default": "{}",
+            "required": true
+        }
+    ]
+}
