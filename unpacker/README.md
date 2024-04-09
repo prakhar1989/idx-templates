@@ -1,5 +1,3 @@
-A template for getting started with Dotnet in Project IDX
-
 ## Open in Project IDX 
 
 <a href="https://idx.google.com/new?template=https://github.com/prakhar1989/idx-templates/tree/main/unpacker">
