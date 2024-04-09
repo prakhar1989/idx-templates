@@ -10,7 +10,7 @@
             "id": "files",
             "name": "Files (JSON) to unpack",
             "type": "string",
-            "default": '{"index.html": "hello", "src/app.js": "console.log(2)"}',
+            "default": "{\"index.html\": \"hello\", \"src/app.js\": \"console.log(2)\"}",
             "required": true
         }
     ]
