@@ -1,17 +1,17 @@
 {
-    "name": "Bundle Unpacker",
-    "description": "oo",
-    "categories": [
-        "Web app"
-    ],
-    "publisher": "prakhar",
-    "params": [
-        {
-            "id": "files",
-            "name": "Files (JSON) to unpack",
-            "type": "string",
-            "default": "{\"index.html\": \"hello\", \"src/app.js\": \"console.log(2)\"}",
-            "required": true
-        }
-    ]
+  "name": "Bundle Unpacker",
+  "description": "",
+  "categories": [
+    "Web app"
+  ],
+  "publisher": "prakhar",
+  "params": [
+    {
+      "id": "bundleId",
+      "name": "Import bundle ID",
+      "type": "string",
+      "default": "",
+      "required": true
+    }
+  ]
 }
