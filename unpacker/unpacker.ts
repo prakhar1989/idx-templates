@@ -17,7 +17,12 @@ async function unpack(pathName: string, bundleId: string) {
       throw new Error(`${response.status}: ${response.statusText}`);
     }
 
-    const responseJson = (await response.json() || {}) as { files?: { [key: string]: string } };
+    let responseText = await response.text();
+
+    // trim JSON safety prefix if present
+    responseText = responseText.trim().replace(/^\)\]\}\'\n?/, '');
+
+    const responseJson = JSON.parse(responseText) as { files?: { [key: string]: string } };
     const { files } = responseJson;
     if (!files) {
       throw new Error('No files');
