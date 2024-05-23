@@ -6,9 +6,7 @@ import process from 'process';
  * Unpacks files in a folder.
  *
  * @param pathName Path to the folder in which files will be unpacked
- * @param filesStr The bundle ID to fetch
- *
- * {"index.html": "...", "README.md": "hello", "src/app.js": "console.log(2+2)"}
+ * @param bundleId The bundle ID to fetch (created via a POST to /run.api)
  */
 async function unpack(pathName: string, bundleId: string) {
   try {
@@ -22,15 +20,15 @@ async function unpack(pathName: string, bundleId: string) {
     // trim JSON safety prefix if present
     responseText = responseText.trim().replace(/^\)\]\}\'\n?/, '');
 
-    const responseJson = JSON.parse(responseText) as { files?: { [key: string]: string } };
-    const { files } = responseJson;
+    const responseJson = JSON.parse(responseText) as {files?: {[key: string]: string}};
+    const {files} = responseJson;
     if (!files) {
       throw new Error('No files');
     }
     console.log('files', files);
 
     if (!fs.existsSync(pathName)) {
-      fs.mkdirSync(pathName, { recursive: true }); // Create nested directories if needed
+      fs.mkdirSync(pathName, {recursive: true}); // Create nested directories if needed
     }
 
     for (const fileName in files) {
@@ -38,7 +36,7 @@ async function unpack(pathName: string, bundleId: string) {
       const folder = path.dirname(filePath);
       // create the folder if it doesn't exist
       if (!fs.existsSync(folder)) {
-        fs.mkdirSync(folder, { recursive: true });
+        fs.mkdirSync(folder, {recursive: true});
       }
       fs.writeFileSync(filePath, files[fileName]);
     }
