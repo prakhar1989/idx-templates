@@ -9,9 +9,7 @@
     {
       "id": "bundleId",
       "name": "Import bundle ID",
-      "type": "string",
-      "default": "",
-      "required": true
+      "type": "string"
     }
   ],
   "host": {

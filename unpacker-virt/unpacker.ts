@@ -54,9 +54,14 @@ async function main() {
  * have a dev.nix file) to the destination path and then unpacks the bundle there.
  */
 async function instantiateFlutter({destPath, bundle}: InstantiatorContext) {
-  fs.rmSync(destPath, {recursive: true});
+  fs.rmSync(destPath, {recursive: true, force: true});
   // destPath and /home/user/myapp should be on the same filesystem/device
   fs.renameSync('/home/user/myapp', destPath);
+  // string replace paths in dev.nix
+  const devnixPath = path.resolve(destPath, '.idx/dev.nix');
+  let devnix = fs.readFileSync(devnixPath, { encoding: 'utf8' });
+  devnix = devnix.replace(/\/home\/user\/myapp/g, destPath);
+  fs.writeFileSync(devnixPath, devnix, {encoding: 'utf8'});
   await unpackFiles(destPath, bundle);
 }
 
