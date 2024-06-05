@@ -50,24 +50,25 @@ async function main() {
 }
 
 /**
- * Flutter-specific unpacker that extracts files on top of the existing /home/user/myapp,
- * ignoring the destination path provided by the template.
+ * Flutter-specific unpacker that first renames the existing /home/user/myapp (which should
+ * have a dev.nix file) to the destination path and then unpacks the bundle there.
  */
-async function instantiateFlutter({bundle}: InstantiatorContext) {
-  await unpackFiles('/home/user/myapp', bundle);
+async function instantiateFlutter({destPath, bundle}: InstantiatorContext) {
+  fs.rmSync(destPath, {recursive: true});
+  // destPath and /home/user/myapp should be on the same filesystem/device
+  fs.renameSync('/home/user/myapp', destPath);
+  await unpackFiles(destPath, bundle);
 }
 
 /**
  * Default instantiator that unpacks files to an entirely empty directory.
  */
 async function instantiateDefault({resPath, destPath, bundle}: InstantiatorContext) {
-  const tempPath = fs.mkdtempSync('unpacker');
-  fs.mkdirSync(path.resolve(tempPath, '.idx'), {recursive: true});
-  const devnixPath = path.resolve(tempPath, '.idx/dev.nix');
+  fs.mkdirSync(path.resolve(destPath, '.idx'), {recursive: true});
+  const devnixPath = path.resolve(destPath, '.idx/dev.nix');
   fs.cpSync(path.resolve(resPath, 'dev.nix'), devnixPath);
   fs.chmodSync(devnixPath, 0o644);
-  await unpackFiles(tempPath, bundle);
-  fs.renameSync(tempPath, destPath);
+  await unpackFiles(destPath, bundle);
 }
 
 /**
