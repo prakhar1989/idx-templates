@@ -1,0 +1,20 @@
+{
+  "name": "Bundle Unpacker (w/ Virtualization)",
+  "description": "",
+  "categories": [
+    "Web app"
+  ],
+  "publisher": "prakhar",
+  "params": [
+    {
+      "id": "bundleId",
+      "name": "Import bundle ID",
+      "type": "string",
+      "default": "",
+      "required": true
+    }
+  ],
+  "host": {
+    "virtualization": true
+  }
+}
