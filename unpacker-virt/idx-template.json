@@ -1,5 +1,5 @@
 {
-  "name": "Bundle Unpacker",
+  "name": "Bundle Unpacker (w/ Virtualization)",
   "description": "Unpacker",
   "categories": [
     "Web app"
@@ -11,5 +11,8 @@
       "name": "Import bundle ID",
       "type": "string"
     }
-  ]
+  ],
+  "host": {
+    "virtualization": true
+  }
 }
