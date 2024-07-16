@@ -30,7 +30,7 @@
       # Runs when a workspace is first created
       onCreate = {
         default.openFiles = [
-          "create.sql" "example.sql"
+          "README.md" "create.sql" "example.sql"
         ];
         # Example: install JS dependencies from NPM
         setup = ''
