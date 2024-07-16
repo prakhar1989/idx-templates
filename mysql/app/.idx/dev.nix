@@ -25,7 +25,7 @@
         # Example: install JS dependencies from NPM
         npm-install = "npm install";
         default.openFiles = [
-          "README.md" "create.sql" "example.sql"
+          "README.md" "index.js"
         ];
       };
       # Runs when the workspace is (re)started
