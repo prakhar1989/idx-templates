@@ -2,6 +2,7 @@
 
 A simple mysql starter with NodeJS in Project IDX.
 
+> NOTE: You might have to reload the window once the dependencies are installed for the SQLConnection extension to work as expected
 
 ## Next steps
 
